@@ -15,24 +15,23 @@ import java.util.logging.Logger;
  *
  * @author trinh
  */
-public class Connecttion {
+public class LoginConnection {
     
-    Connection conn = null;
-   
-    public Connection getConnection()
+    static Connection conn = null;
+    
+    public static Connection getConnection()
     {
+           
         try {
             Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/face_recog", "root", "");           
             
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/face_recog", "root", "");
-            
+        }   catch (SQLException ex) {
+            Logger.getLogger(LoginConnection.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Connecttion.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Connecttion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return conn;
     }
-            
 }

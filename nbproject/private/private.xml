@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/trinh/Documents/NetBeansProjects/Facebulus/src/facebulus/OpenCVFaceRecognizer.java</file>
-            <file>file:/C:/Users/trinh/Documents/NetBeansProjects/Facebulus/src/facebulus/Recognizer.java</file>
-            <file>file:/C:/Users/trinh/Documents/NetBeansProjects/Facebulus/src/facebulus/Capture.java</file>
-            <file>file:/C:/Users/trinh/Documents/NetBeansProjects/Facebulus/src/facebulus/Frame.java</file>
-            <file>file:/C:/Users/trinh/Documents/NetBeansProjects/Facebulus/src/facebulus/FaceDetector.java</file>
+            <file>file:/C:/Users/trinh/Documents/GitHub/Facebulous/src/facebulus/Capture.java</file>
+            <file>file:/C:/Users/trinh/Documents/GitHub/Facebulous/src/facebulus/Frame.java</file>
+            <file>file:/C:/Users/trinh/Documents/GitHub/Facebulous/src/facebulus/Options.java</file>
         </group>
     </open-files>
 </project-private>
