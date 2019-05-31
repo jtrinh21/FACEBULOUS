@@ -29,49 +29,49 @@ public class Options extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        capture = new javax.swing.JLabel();
+        recognize = new javax.swing.JLabel();
+        data = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(118, 97, 83));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Capture");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel2.setOpaque(true);
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        capture.setBackground(new java.awt.Color(255, 255, 255));
+        capture.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        capture.setForeground(new java.awt.Color(118, 97, 83));
+        capture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        capture.setText("Capture");
+        capture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        capture.setOpaque(true);
+        capture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                captureMouseClicked(evt);
             }
         });
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(118, 97, 83));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Recognizer");
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel5.setOpaque(true);
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        recognize.setBackground(new java.awt.Color(118, 97, 83));
+        recognize.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        recognize.setForeground(new java.awt.Color(255, 255, 255));
+        recognize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        recognize.setText("Recognize");
+        recognize.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        recognize.setOpaque(true);
+        recognize.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                recognizeMouseClicked(evt);
             }
         });
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(118, 97, 83));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Data");
-        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel6.setOpaque(true);
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        data.setBackground(new java.awt.Color(255, 255, 255));
+        data.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        data.setForeground(new java.awt.Color(118, 97, 83));
+        data.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        data.setText("Data");
+        data.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        data.setOpaque(true);
+        data.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                dataMouseClicked(evt);
             }
         });
 
@@ -80,17 +80,17 @@ public class Options extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(capture, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(recognize, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(data, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+            .addComponent(capture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(recognize, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+            .addComponent(data, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -108,17 +108,22 @@ public class Options extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void recognizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recognizeMouseClicked
         // TODO add your handling code here:
         
+        Recognize recog = new Recognize();
         
-    }//GEN-LAST:event_jLabel5MouseClicked
+        recog.setVisible(true);
+        
+        setVisible(false);        
+        
+    }//GEN-LAST:event_recognizeMouseClicked
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void dataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dataMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_dataMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void captureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_captureMouseClicked
         // TODO add your handling code here:
         
         Capture cap = new Capture();
@@ -126,7 +131,7 @@ public class Options extends javax.swing.JFrame {
         cap.setVisible(true);
         
         setVisible(false);
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_captureMouseClicked
 
     /**
      * @param args the command line arguments
@@ -160,9 +165,9 @@ public class Options extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel capture;
+    private javax.swing.JLabel data;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel recognize;
     // End of variables declaration//GEN-END:variables
 }

@@ -63,7 +63,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="jLayeredPane2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="panel" alignment="0" pref="483" max="32767" attributes="0"/>
+                      <Component id="panel" alignment="0" pref="491" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -109,99 +109,106 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="firstname" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
-                                          <Component id="phone" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="jSeparator18" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="1" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="address" min="-2" pref="102" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jSeparator20" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="state" min="-2" pref="102" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jSeparator22" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="career" min="-2" pref="102" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jSeparator9" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="middle" min="-2" pref="102" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jSeparator24" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
-                                          <Component id="jSeparator8" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jSeparator17" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jSeparator16" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jSeparator19" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                      <Component id="email" min="-2" pref="102" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                      <Component id="lastname" min="-2" pref="102" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="birth" min="-2" pref="102" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" alignment="1" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="city" min="-2" pref="102" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="jSeparator21" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="zipcode" min="-2" pref="102" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="jSeparator23" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="marital" min="-2" pref="102" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jSeparator25" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-                              <Component id="capture" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="back" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="firstname" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
+                                                  <Component id="phone" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                              <Component id="jSeparator18" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="1" groupAlignment="1" attributes="0">
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="address" min="-2" pref="102" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jSeparator20" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Component id="state" min="-2" pref="102" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jSeparator22" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="career" min="-2" pref="102" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jSeparator9" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="middle" min="-2" pref="102" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jSeparator24" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
+                                                  <Component id="jSeparator8" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jSeparator17" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jSeparator16" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jSeparator19" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                              <Component id="email" min="-2" pref="102" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                              <Component id="lastname" min="-2" pref="102" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                              <Component id="birth" min="-2" pref="102" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" alignment="1" groupAlignment="1" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="city" min="-2" pref="102" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jSeparator21" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="zipcode" min="-2" pref="102" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jSeparator23" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="marital" min="-2" pref="102" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jSeparator25" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                                      <Component id="capture" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -209,14 +216,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel7" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="back" min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lastname" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jSeparator17" min="-2" pref="10" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Component id="birth" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jSeparator16" min="-2" pref="10" max="-2" attributes="0"/>
@@ -233,7 +243,7 @@
                               <Component id="firstname" min="-2" pref="14" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jSeparator8" min="-2" pref="10" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Component id="middle" min="-2" pref="14" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jSeparator24" min="-2" pref="10" max="-2" attributes="0"/>
@@ -629,6 +639,17 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="captureMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="back">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/back (2).png"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="backMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
