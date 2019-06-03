@@ -8,6 +8,7 @@ package facebulus;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
 import java.io.ByteArrayInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,6 +19,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import org.opencv.core.Core;
@@ -113,9 +115,8 @@ public class Capture extends javax.swing.JFrame {
                                 if (runnable == false) 
                                 {
                                     System.out.println("Pause...");
-                                 //   Imgcodecs.imwrite("camera.jpg", tempMat);
-                                 
-                                    
+                                    Imgcodecs.imwrite("camera.jpg", tempMat);
+                                                                     
 
                                     for(int i = 1; i <= 15; i++)
                                     {
@@ -124,7 +125,7 @@ public class Capture extends javax.swing.JFrame {
                                         Imgcodecs.imwrite("C:\\Users\\trinh\\Documents\\GitHub\\Facebulous\\capture\\" + getID() + "-"  + firstname.getText() + "-" + lastname.getText() + "_" + i + ".jpg", temp);
                                         System.out.println("Capture " + i);
                                     }
-                                   this.wait();
+                                   //this.wait();
                                 }
                             }
                         }
@@ -156,6 +157,7 @@ public class Capture extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         panel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLabel7 = new javax.swing.JLabel();
         firstname = new javax.swing.JTextField();
@@ -199,11 +201,11 @@ public class Capture extends javax.swing.JFrame {
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 357, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jLayeredPane2.setBackground(new java.awt.Color(255, 255, 255));
@@ -659,15 +661,42 @@ public class Capture extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         dThread.runnable = false;
+
         
+        
+        Mat newFrame = Imgcodecs.imread("camera.jpg");
+        
+        Image img = MatToBufferedImage(newFrame);
+        
+        ImageIcon icon = new ImageIcon(img.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), jLabel1.getWidth()));
+        
+        jLabel1.setIcon(icon);
+
         try {
             setProfile();
         } catch (SQLException ex) {
             Logger.getLogger(Capture.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         camera.release();
     }//GEN-LAST:event_captureMouseClicked
 
+        private Image MatToBufferedImage(Mat m) {
+
+        int type = BufferedImage.TYPE_BYTE_GRAY;
+        if ( m.channels() > 1 ) {
+            type = BufferedImage.TYPE_3BYTE_BGR;
+        }
+        int bufferSize = m.channels()*m.cols()*m.rows();
+        byte [] b = new byte[bufferSize];
+        m.get(0,0,b); // get all the pixels
+        BufferedImage image = new BufferedImage(m.cols(),m.rows(), type);
+        final byte[] targetPixels = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
+        System.arraycopy(b, 0, targetPixels, 0, b.length);  
+        return image;
+    }    
+        
+        
     private void cityMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cityMouseClicked
         // TODO add your handling code here:
         
@@ -811,6 +840,7 @@ public class Capture extends javax.swing.JFrame {
     public static javax.swing.JTextField city;
     public static javax.swing.JTextField email;
     public static javax.swing.JTextField firstname;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;

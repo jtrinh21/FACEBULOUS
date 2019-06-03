@@ -62,8 +62,9 @@ import static org.bytedeco.opencv.global.opencv_imgcodecs.*;
  */
 public class OpenCVFaceRecognizer {
     
-    
-    public static int Recognizer() throws SQLException{
+
+        
+    public  int Recognizer() throws SQLException{
         
         String trainingDir = "C:\\Users\\trinh\\Documents\\GitHub\\Facebulous\\capture";
 
@@ -114,47 +115,46 @@ public class OpenCVFaceRecognizer {
         faceRecognizer.predict(testImage, label, confidence);
         
         int predictedLabel = label.get(0);
-      //  setText();
+        
+       
         System.out.println(predictedLabel);
         System.out.println(confidence.get(0));
+      
         return predictedLabel;
     
     }
     
     
-    private static void setText() throws SQLException
-    {
-            Statement stmt = null;
+    public void setText(int n) throws SQLException
+    {    
     
-    ResultSet rs =null;
-    
-    Connection conn = LoginConnection.getConnection();
-    
-    PreparedStatement ps = null;
-    
-            String sql = "select * from profile where id = " + Recognizer();
+            Connection conn = LoginConnection.getConnection();
+        
+            String sql = "select * from profile where id = " + n;
             
-            ps = conn.prepareStatement(sql);
+            PreparedStatement ps = conn.prepareStatement(sql);
+            
+            ResultSet rs = ps.executeQuery();
             
             if(rs.next())
             {
                 try {
-                    firstname.setText(rs.getString(1));
-                    lastname.setText(rs.getString(2));
-                    middle.setText(rs.getString(3));
-                    birth.setText(rs.getString(4));
-                    phone.setText(rs.getString(5));
-                    email.setText(rs.getString(6));
-                    career.setText(rs.getString(7));
-                    marital.setText(rs.getString(8));
-                    address.setText(rs.getString(9));
-                    city.setText(rs.getString(10));
-                    state.setText(rs.getString(11));
-                    zipcode.setText(rs.getString(12));
+                    firstname.setText(rs.getString(2));
+                    lastname.setText(rs.getString(3));
+                    middle.setText(rs.getString(4));
+                    birth.setText(rs.getString(5));
+                    phone.setText(rs.getString(6));
+                    email.setText(rs.getString(7));
+                    career.setText(rs.getString(8));
+                    marital.setText(rs.getString(9));
+                    address.setText(rs.getString(10));
+                    city.setText(rs.getString(11));
+                    state.setText(rs.getString(12));
+                    zipcode.setText(rs.getString(13));
                 } catch (SQLException ex) {
                     Logger.getLogger(OpenCVFaceRecognizer.class.getName()).log(Level.SEVERE, null, ex);
                 }
-    }
+            }
 
-}
+    }
 }

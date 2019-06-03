@@ -39,13 +39,13 @@ public class Recognize extends javax.swing.JFrame {
 
     private DaemonThread dThread = null;
         
-    Statement stmt = null;
+//    Statement stmt = null;
     
-    ResultSet rs =null;
+ //   ResultSet rs =null;
     
-    Connection conn = LoginConnection.getConnection();
+ //   Connection conn = LoginConnection.getConnection();
     
-    PreparedStatement ps = null;
+//    PreparedStatement ps = null;
     
     OpenCVFaceRecognizer recognizer = new OpenCVFaceRecognizer();
     
@@ -115,8 +115,7 @@ public class Recognize extends javax.swing.JFrame {
                             // capture an image and name it as camera.jpg
                             Imgcodecs.imwrite("camera.jpg", temp);
                              
-                            OpenCVFaceRecognizer.Recognizer();
-                           // setText();
+                            recognizer.setText(recognizer.Recognizer());
                             
                             if (g.drawImage(buff, 0, 0, panel.getWidth(), 
                                     panel.getHeight(), 0, 0, buff.getWidth(), 
@@ -132,6 +131,18 @@ public class Recognize extends javax.swing.JFrame {
                     } catch (Exception ex){
                                     
                         System.out.println("Error");
+                        firstname.setText("");
+                        lastname.setText("");
+                        middle.setText("");
+                        birth.setText("");
+                        phone.setText("");
+                        email.setText("");
+                        career.setText("");
+                        marital.setText("");
+                        address.setText("");
+                        city.setText("");
+                        state.setText("");
+                        zipcode.setText(""); 
                                     
                     }
                 }
@@ -568,33 +579,39 @@ public class Recognize extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    public void setText()
+    public void setText() throws SQLException
     {
-        try {
-            String sql = "select * from profile where id = " + OpenCVFaceRecognizer.Recognizer();
+        Statement stmt = null;
+    
+        ResultSet rs =null;
+    
+        Connection conn = LoginConnection.getConnection();
+    
+        PreparedStatement ps = null;
+    
+            String sql = "select * from profile where id = " + recognizer.Recognizer();
             
             ps = conn.prepareStatement(sql);
             
             if(rs.next())
             {
-                firstname.setText(rs.getString(1));
-                lastname.setText(rs.getString(2));
-                middle.setText(rs.getString(3));
-                birth.setText(rs.getString(4));
-                phone.setText(rs.getString(5));
-                email.setText(rs.getString(6));
-                career.setText(rs.getString(7));
-                marital.setText(rs.getString(8));
-                address.setText(rs.getString(9));
-                city.setText(rs.getString(10));
-                state.setText(rs.getString(11));
-                zipcode.setText(rs.getString(12));
+                try {
+                    firstname.setText(rs.getString(1));
+                    lastname.setText(rs.getString(2));
+                    middle.setText(rs.getString(3));
+                    birth.setText(rs.getString(4));
+                    phone.setText(rs.getString(5));
+                    email.setText(rs.getString(6));
+                    career.setText(rs.getString(7));
+                    marital.setText(rs.getString(8));
+                    address.setText(rs.getString(9));
+                    city.setText(rs.getString(10));
+                    state.setText(rs.getString(11));
+                    zipcode.setText(rs.getString(12));
+                } catch (SQLException ex) {
+                    Logger.getLogger(OpenCVFaceRecognizer.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(Recognize.class.getName()).log(Level.SEVERE, null, ex);
-            
-            
-        }
     }
     
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
