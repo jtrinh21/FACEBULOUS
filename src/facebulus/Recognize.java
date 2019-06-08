@@ -37,15 +37,7 @@ import org.opencv.videoio.VideoCapture;
  */
 public class Recognize extends javax.swing.JFrame {
 
-    private DaemonThread dThread = null;
-        
-//    Statement stmt = null;
-    
- //   ResultSet rs =null;
-    
- //   Connection conn = LoginConnection.getConnection();
-    
-//    PreparedStatement ps = null;
+    private DaemonThread dThread = null;       
     
     OpenCVFaceRecognizer recognizer = new OpenCVFaceRecognizer();
     
@@ -200,6 +192,7 @@ public class Recognize extends javax.swing.JFrame {
         panel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Face Recognizer");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

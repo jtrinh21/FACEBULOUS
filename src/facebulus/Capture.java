@@ -29,6 +29,7 @@ import org.opencv.core.MatOfRect;
 import org.opencv.core.Point;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
+import org.opencv.core.Size;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
@@ -80,7 +81,7 @@ public class Capture extends javax.swing.JFrame {
                             Graphics g = panel.getGraphics();
                             
                             // detects objects of different sizes in the input image
-                            faceDetector.detectMultiScale(frame, faceDetections);
+                            faceDetector.detectMultiScale(frame, faceDetections, 1.2, 5, 0, new Size(20, 20));
                             
                             Mat tempMat = frame.clone(); 
                             // put the result in an array of Rects and draw them on the frame
@@ -115,8 +116,16 @@ public class Capture extends javax.swing.JFrame {
                                 if (runnable == false) 
                                 {
                                     System.out.println("Pause...");
+                                    
                                     Imgcodecs.imwrite("camera.jpg", tempMat);
-                                                                     
+                                    
+                                    Mat newFrame = Imgcodecs.imread("camera.jpg");
+        
+                                    Image img = MatToBufferedImage(newFrame);
+        
+                                    ImageIcon icon = new ImageIcon(img.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), jLabel1.getWidth()));
+        
+                                    jLabel1.setIcon(icon);                                                                     
 
                                     for(int i = 1; i <= 15; i++)
                                     {
@@ -188,9 +197,8 @@ public class Capture extends javax.swing.JFrame {
         back = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Face Capture");
+        setTitle("Face Capturer");
         setBackground(new java.awt.Color(255, 255, 255));
-        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -662,15 +670,7 @@ public class Capture extends javax.swing.JFrame {
         
         dThread.runnable = false;
 
-        
-        
-        Mat newFrame = Imgcodecs.imread("camera.jpg");
-        
-        Image img = MatToBufferedImage(newFrame);
-        
-        ImageIcon icon = new ImageIcon(img.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), jLabel1.getWidth()));
-        
-        jLabel1.setIcon(icon);
+
 
         try {
             setProfile();
@@ -681,7 +681,7 @@ public class Capture extends javax.swing.JFrame {
         camera.release();
     }//GEN-LAST:event_captureMouseClicked
 
-        private Image MatToBufferedImage(Mat m) {
+    private Image MatToBufferedImage(Mat m) {
 
         int type = BufferedImage.TYPE_BYTE_GRAY;
         if ( m.channels() > 1 ) {

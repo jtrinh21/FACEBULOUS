@@ -34,7 +34,7 @@ public class Options extends javax.swing.JFrame {
         data = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setTitle("Options");
 
         capture.setBackground(new java.awt.Color(255, 255, 255));
         capture.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
