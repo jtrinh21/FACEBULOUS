@@ -17,8 +17,10 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.JTextField;
+import javax.swing.JFrame;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
+import org.jfree.ui.RefineryUtilities;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
@@ -50,7 +52,7 @@ public class Recognize extends javax.swing.JFrame {
     // create a buffer to store the Mat
     MatOfByte mem = new MatOfByte();
     
-    CascadeClassifier faceDetector = new CascadeClassifier("C:\\Users\\trinh\\Documents\\GitHub\\opencv\\data\\haarcascades\\haarcascade_frontalface_alt.xml");
+    CascadeClassifier faceDetector = new CascadeClassifier("C:\\Users\\dttri\\OneDrive\\Documents\\GitHub\\opencv\\data\\haarcascades\\haarcascade_frontalface_alt.xml");
     
     // a frame to display the rectangular
     MatOfRect faceDetections = new MatOfRect();
@@ -107,7 +109,7 @@ public class Recognize extends javax.swing.JFrame {
                             // capture an image and name it as camera.jpg
                             Imgcodecs.imwrite("camera.jpg", temp);
                              
-                            recognizer.setText(recognizer.Recognizer());
+                            recognizer.setText(recognizer.Recognizer().getPredictedLabel());
                             
                             if (g.drawImage(buff, 0, 0, panel.getWidth(), 
                                     panel.getHeight(), 0, 0, buff.getWidth(), 
@@ -145,7 +147,8 @@ public class Recognize extends javax.swing.JFrame {
     
     public Recognize() {
         initComponents();
-        activateCam();
+        activateCam();      
+     //   setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -185,13 +188,13 @@ public class Recognize extends javax.swing.JFrame {
         jSeparator24 = new javax.swing.JSeparator();
         marital = new javax.swing.JTextField();
         jSeparator25 = new javax.swing.JSeparator();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JLabel();
+        chart = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         panel = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Face Recognizer");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -288,31 +291,9 @@ public class Recognize extends javax.swing.JFrame {
 
         jSeparator25.setForeground(new java.awt.Color(118, 97, 83));
 
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(118, 97, 83));
-        jRadioButton1.setText("Yes");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-
-        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(118, 97, 83));
-        jRadioButton2.setText("No");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(118, 97, 83));
-        jLabel1.setText("Did I identify you correctly?");
+        jLabel1.setText("To View Chart");
 
         back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back (2).png"))); // NOI18N
@@ -321,6 +302,17 @@ public class Recognize extends javax.swing.JFrame {
                 backMouseClicked(evt);
             }
         });
+
+        chart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/graph (2).png"))); // NOI18N
+        chart.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                chartMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(118, 97, 83));
+        jLabel3.setText("Click");
 
         jLayeredPane2.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(firstname, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -347,10 +339,10 @@ public class Recognize extends javax.swing.JFrame {
         jLayeredPane2.setLayer(jSeparator24, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(marital, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jSeparator25, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jRadioButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jRadioButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(back, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(chart, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -388,10 +380,7 @@ public class Recognize extends javax.swing.JFrame {
                                         .addGap(20, 20, 20))
                                     .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(59, 59, 59))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jLayeredPane2Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGap(59, 59, 59)))
                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jSeparator17)
                             .addComponent(jSeparator16)
@@ -418,18 +407,21 @@ public class Recognize extends javax.swing.JFrame {
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
                                 .addComponent(marital, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(20, 20, 20))
-                            .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jLayeredPane2Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jRadioButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2))))
+                            .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(back)
                         .addGap(71, 71, 71)
                         .addComponent(jLabel7)))
                 .addContainerGap(44, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chart, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(117, 117, 117))
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -492,12 +484,12 @@ public class Recognize extends javax.swing.JFrame {
                         .addComponent(zipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20)
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(chart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         panel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -511,7 +503,7 @@ public class Recognize extends javax.swing.JFrame {
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 484, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -525,7 +517,7 @@ public class Recognize extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
             .addComponent(jLayeredPane2)
         );
 
@@ -562,16 +554,10 @@ public class Recognize extends javax.swing.JFrame {
      
         thread.start();
     }
+    
+   
         
         
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
     public void setText() throws SQLException
     {
         Statement stmt = null;
@@ -612,10 +598,20 @@ public class Recognize extends javax.swing.JFrame {
         
         Options op = new Options();
         
-        op.setVisible(true);
+        op.setVisible(true);       
         
         setVisible(false);
     }//GEN-LAST:event_backMouseClicked
+
+    private void chartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chartMouseClicked
+        // TODO add your handling code here:
+                       
+        Chart chart = new Chart("Confidence Value and Time Chart");
+        chart.pack();
+        RefineryUtilities.centerFrameOnScreen(chart);
+        chart.setVisible(true);
+    }//GEN-LAST:event_chartMouseClicked
+
 
     /**
      * @param args the command line arguments
@@ -640,6 +636,7 @@ public class Recognize extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Recognize.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -655,15 +652,15 @@ public class Recognize extends javax.swing.JFrame {
     public static javax.swing.JTextField birth;
     private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JTextField career;
+    private javax.swing.JLabel chart;
     public static javax.swing.JTextField city;
     public static javax.swing.JTextField email;
     public static javax.swing.JTextField firstname;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator17;
     private javax.swing.JSeparator jSeparator18;

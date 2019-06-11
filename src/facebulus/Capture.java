@@ -60,7 +60,7 @@ public class Capture extends javax.swing.JFrame {
     // create a buffer to store the Mat
     MatOfByte mem = new MatOfByte();
     
-    CascadeClassifier faceDetector = new CascadeClassifier("C:\\Users\\trinh\\Documents\\GitHub\\opencv\\data\\haarcascades\\haarcascade_frontalface_alt.xml");
+    CascadeClassifier faceDetector = new CascadeClassifier("C:\\Users\\dttri\\OneDrive\\Documents\\GitHub\\opencv\\data\\haarcascades\\haarcascade_frontalface_alt.xml");
     
     // a frame to display the rectangular
     MatOfRect faceDetections = new MatOfRect();
@@ -131,7 +131,7 @@ public class Capture extends javax.swing.JFrame {
                                     {
                                         
                                         Mat temp = new Mat(tempMat, rectCrop);
-                                        Imgcodecs.imwrite("C:\\Users\\trinh\\Documents\\GitHub\\Facebulous\\capture\\" + getID() + "-"  + firstname.getText() + "-" + lastname.getText() + "_" + i + ".jpg", temp);
+                                        Imgcodecs.imwrite("C:\\Users\\dttri\\OneDrive\\Documents\\GitHub\\Facebulous\\capture\\" + getID() + "-"  + firstname.getText() + "-" + lastname.getText() + "_" + i + ".jpg", temp);
                                         System.out.println("Capture " + i);
                                     }
                                    //this.wait();

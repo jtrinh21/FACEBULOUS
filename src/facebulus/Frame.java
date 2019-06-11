@@ -9,11 +9,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.UIManager;
 import org.opencv.core.Core;
 
@@ -207,6 +205,8 @@ public class Frame extends javax.swing.JFrame {
             
             if(rs.next())
             {
+                VoiceAssistant voice = new VoiceAssistant();
+                voice.speakUp(rs.getString("lastname"));
                 Options op = new Options();
                 
                 setVisible(false);
@@ -261,6 +261,8 @@ public class Frame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
