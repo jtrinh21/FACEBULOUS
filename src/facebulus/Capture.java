@@ -11,7 +11,6 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.io.ByteArrayInputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -670,7 +669,11 @@ public class Capture extends javax.swing.JFrame {
         
         dThread.runnable = false;
 
-
+        ProgressBar progressBarFrame = new ProgressBar();
+        
+        progressBarFrame.setUpLoading();
+        
+        progressBarFrame.setVisible(true);
 
         try {
             setProfile();

@@ -190,7 +190,7 @@ public class Recognize extends javax.swing.JFrame {
         jSeparator25 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JLabel();
-        chart = new javax.swing.JLabel();
+        chartButton = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         panel = new javax.swing.JPanel();
 
@@ -303,10 +303,10 @@ public class Recognize extends javax.swing.JFrame {
             }
         });
 
-        chart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/graph (2).png"))); // NOI18N
-        chart.addMouseListener(new java.awt.event.MouseAdapter() {
+        chartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/graph (2).png"))); // NOI18N
+        chartButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                chartMouseClicked(evt);
+                chartButtonMouseClicked(evt);
             }
         });
 
@@ -341,7 +341,7 @@ public class Recognize extends javax.swing.JFrame {
         jLayeredPane2.setLayer(jSeparator25, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(back, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(chart, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(chartButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
@@ -418,7 +418,7 @@ public class Recognize extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chart, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(chartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(117, 117, 117))
@@ -487,7 +487,7 @@ public class Recognize extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(chart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(chartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -603,14 +603,14 @@ public class Recognize extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_backMouseClicked
 
-    private void chartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chartMouseClicked
+    private void chartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chartButtonMouseClicked
         // TODO add your handling code here:
                        
-        Chart chart = new Chart("Confidence Value and Time Chart");
-        chart.pack();
-        RefineryUtilities.centerFrameOnScreen(chart);
-        chart.setVisible(true);
-    }//GEN-LAST:event_chartMouseClicked
+        Chart lineChart = new Chart("Confidence Value and Time Chart");
+        lineChart.pack();
+        RefineryUtilities.centerFrameOnScreen(lineChart);
+        lineChart.setVisible(true);
+    }//GEN-LAST:event_chartButtonMouseClicked
 
 
     /**
@@ -652,7 +652,7 @@ public class Recognize extends javax.swing.JFrame {
     public static javax.swing.JTextField birth;
     private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JTextField career;
-    private javax.swing.JLabel chart;
+    private javax.swing.JLabel chartButton;
     public static javax.swing.JTextField city;
     public static javax.swing.JTextField email;
     public static javax.swing.JTextField firstname;
