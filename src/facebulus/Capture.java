@@ -10,6 +10,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import org.opencv.core.Core;
@@ -126,6 +128,7 @@ public class Capture extends javax.swing.JFrame {
         
                                     jLabel1.setIcon(icon);                                                                     
 
+
                                     for(int i = 1; i <= 15; i++)
                                     {
                                         
@@ -133,15 +136,16 @@ public class Capture extends javax.swing.JFrame {
                                         Imgcodecs.imwrite("C:\\Users\\dttri\\OneDrive\\Documents\\GitHub\\Facebulous\\capture\\" + getID() + "-"  + firstname.getText() + "-" + lastname.getText() + "_" + i + ".jpg", temp);
                                         System.out.println("Capture " + i);
                                     }
-                                   //this.wait();
+                                    
+                                 //this.wait();
+
                                 }
                             }
-                        }
-                    
+                        }                   
 
                     } catch (Exception ex){
                                     
-                        System.out.println("Error");
+                        JOptionPane.showMessageDialog(null, "Error input");
                                     
                     }
                 }
@@ -665,23 +669,23 @@ public class Capture extends javax.swing.JFrame {
     }//GEN-LAST:event_maritalMouseClicked
 
     private void captureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_captureMouseClicked
-        // TODO add your handling code here:
-        
-        dThread.runnable = false;
-
-        ProgressBar progressBarFrame = new ProgressBar();
-        
-        progressBarFrame.setUpLoading();
-        
-        progressBarFrame.setVisible(true);
-
         try {
+            // TODO add your handling code here:
+            
+            dThread.runnable = false;
+            
+            ProgressBar progressBarFrame = new ProgressBar();
+            
+            progressBarFrame.setUpLoading();
+            
+            progressBarFrame.setVisible(true);
+
             setProfile();
+
+            camera.release();
         } catch (SQLException ex) {
             Logger.getLogger(Capture.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        camera.release();
     }//GEN-LAST:event_captureMouseClicked
 
     private Image MatToBufferedImage(Mat m) {
@@ -737,7 +741,6 @@ public class Capture extends javax.swing.JFrame {
     
     private void setProfile() throws SQLException
     {
-
             String query = "INSERT INTO PROFILE ("
                       + " id,"
                         + " firstname,"
@@ -772,14 +775,12 @@ public class Capture extends javax.swing.JFrame {
  
             ps.executeUpdate();
                         
-            ps.clearParameters();
-            
+            ps.clearParameters();           
         
     }
 
-    public  int getID() throws SQLException
+    public Integer getID() throws SQLException
     {     
-        try {
             stmt = conn.createStatement();
             
             rs = stmt.executeQuery("select id from profile where firstname = '" + firstname.getText()
@@ -791,15 +792,14 @@ public class Capture extends javax.swing.JFrame {
         
             if(rs.next())
             {
-                System.out.println("OK");
+                System.out.println("OK getID");
+                        return rs.getInt(1);      
+
             }
-          
-                      
-        } catch (SQLException ex) {
-            Logger.getLogger(Capture.class.getName()).log(Level.SEVERE, null, ex);
-        }
-             
-        return rs.getInt(1);      
+            else
+            {
+                return null;
+            }
     }
     
     

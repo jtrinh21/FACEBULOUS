@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
 
 import javax.swing.Timer;
 import javax.swing.JPanel;
@@ -20,17 +19,18 @@ import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.time.Millisecond;
 import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.ui.ApplicationFrame;
+import org.jfree.ui.RectangleEdge;
 
-/**
- * An example to show how we can create a dynamic chart.
-*/
+
 public class Chart extends ApplicationFrame implements ActionListener {
 
     /** The time series data. */
@@ -42,16 +42,11 @@ public class Chart extends ApplicationFrame implements ActionListener {
     /** Timer to refresh graph after every 1/4th of a second */
     private Timer timer = new Timer(250, this);
 
-    /**
-     * Constructs a new dynamic chart application.
-     *
-     * @param title  the frame title.
-     */
+
     public Chart(final String title) {
 
         super(title);
         
-        JFrame frame = new JFrame();
         this.series = new TimeSeries("Confidence Value", Millisecond.class);
 
         final TimeSeriesCollection dataset = new TimeSeriesCollection(this.series);
@@ -75,7 +70,9 @@ public class Chart extends ApplicationFrame implements ActionListener {
         chartPanel.setPreferredSize(new java.awt.Dimension(800, 400));
 
         //Puts the whole content on a Frame
-        setContentPane(content);
+        super.setContentPane(content);
+
+        super.setSize(800, 400);
 
         timer.start();
 
@@ -92,9 +89,16 @@ public class Chart extends ApplicationFrame implements ActionListener {
             true,
             false
         );
+        result.getTitle().setPaint(new Color(118, 97, 83));
 
         final XYPlot plot = result.getXYPlot();
-
+        
+        ValueAxis timeLabel = plot.getDomainAxis();
+        timeLabel.setLabelPaint(new Color(118, 97, 83));
+        
+        ValueAxis confidenceLabel = plot.getRangeAxis();
+        confidenceLabel.setLabelPaint(new Color(118, 97, 83));
+                            
         plot.setBackgroundPaint(new Color(0xffffe0));
         plot.setDomainGridlinesVisible(true);
         plot.setDomainGridlinePaint(Color.lightGray);
@@ -114,18 +118,14 @@ public class Chart extends ApplicationFrame implements ActionListener {
         return result;
     }
     
-    /**
-     * Generates an random entry for a particular call made by time for every 1/4th of a second.
-     *
-     * @param e  the action event.
-     */
+
     public void actionPerformed(final ActionEvent e) {
         OpenCVFaceRecognizer face = new OpenCVFaceRecognizer();
         final double factor;
         try {
             factor = face.Recognizer().getConfidenceValue();
             
-                    this.lastValue = factor;
+            this.lastValue = factor;
 
         } catch (SQLException ex) {
             Logger.getLogger(Chart.class.getName()).log(Level.SEVERE, null, ex);

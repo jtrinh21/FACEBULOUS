@@ -57,6 +57,8 @@ public class Recognize extends javax.swing.JFrame {
     // a frame to display the rectangular
     MatOfRect faceDetections = new MatOfRect();
     
+    Chart lineChart = new Chart("Confidence Value and Time Chart");
+
     
     class DaemonThread implements Runnable {
 
@@ -194,7 +196,7 @@ public class Recognize extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         panel = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Face Recognizer");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -553,9 +555,7 @@ public class Recognize extends javax.swing.JFrame {
         dThread.runnable = true;
      
         thread.start();
-    }
-    
-   
+    }      
         
         
     public void setText() throws SQLException
@@ -593,6 +593,7 @@ public class Recognize extends javax.swing.JFrame {
             }
     }
     
+    
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
         // TODO add your handling code here:
         
@@ -601,14 +602,14 @@ public class Recognize extends javax.swing.JFrame {
         op.setVisible(true);       
         
         setVisible(false);
+        
+        lineChart.setVisible(false);
+        
     }//GEN-LAST:event_backMouseClicked
 
     private void chartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chartButtonMouseClicked
         // TODO add your handling code here:
-                       
-        Chart lineChart = new Chart("Confidence Value and Time Chart");
-        lineChart.pack();
-        RefineryUtilities.centerFrameOnScreen(lineChart);
+                               
         lineChart.setVisible(true);
     }//GEN-LAST:event_chartButtonMouseClicked
 
