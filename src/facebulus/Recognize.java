@@ -150,7 +150,6 @@ public class Recognize extends javax.swing.JFrame {
     public Recognize() {
         initComponents();
         activateCam();      
-     //   setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -599,11 +598,17 @@ public class Recognize extends javax.swing.JFrame {
         
         Options op = new Options();
         
+        dThread.runnable = false;
+        
+        camera.release();
+        
         op.setVisible(true);       
         
         setVisible(false);
         
         lineChart.setVisible(false);
+        
+        
         
     }//GEN-LAST:event_backMouseClicked
 

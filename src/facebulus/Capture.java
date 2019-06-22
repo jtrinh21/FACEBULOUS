@@ -137,8 +137,6 @@ public class Capture extends javax.swing.JFrame {
                                         System.out.println("Capture " + i);
                                     }
                                     
-                                 //this.wait();
-
                                 }
                             }
                         }                   
@@ -575,7 +573,7 @@ public class Capture extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLayeredPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE))
+                    .addComponent(panel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -732,6 +730,8 @@ public class Capture extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Options op = new Options();
+                
+        camera.release();
         
         op.setVisible(true);
         
@@ -757,7 +757,6 @@ public class Capture extends javax.swing.JFrame {
                         + " zipcode ) VALUES ("
                         + "null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             
-         //   String sql = "INSERT INTO `profile` (`id`, `firstname`, `lastname`, `middle`, `birth`, `phone`, `email`, `career`, `marital`, `address`, `city`, `state`, `zipcode`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             ps = conn.prepareStatement(query);
             
             ps.setString(1, firstname.getText());
