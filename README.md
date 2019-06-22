@@ -26,4 +26,6 @@ An application is capable of detecting, capturing different human faces as well 
 ## Explore
 
 #### Login Frame
+* Login Form using phpMyAdmin administration tool to control and FreeTTS API to welcome the users (click on the gif to send you to a Youtube video with the sound effect).
 
+ [![image](https://github.com/jtrinh21/FACEBULOUS/blob/master/gif/LoginForm.gif)](https://www.youtube.com/watch?v=d8h5IL9N3pE&feature=youtu.be)
