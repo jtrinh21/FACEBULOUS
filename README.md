@@ -25,10 +25,12 @@ An application is capable of detecting, capturing different human faces as well 
 
 ## Explore (click on the images to see the full effects).
 
+
 #### Login Frame
 * Login Form using phpMyAdmin administration tool to control and FreeTTS API to welcome the users.
 
  [![image](https://github.com/jtrinh21/FACEBULOUS/blob/master/gif/LoginForm.gif)](https://www.youtube.com/watch?v=d8h5IL9N3pE&feature=youtu.be)
+ 
  
  #### Face Capturer
 * Users are required to input their information including first - middle - last name, 
@@ -40,6 +42,14 @@ date of birth, phone number, email address...
  
   [![image](https://github.com/jtrinh21/FACEBULOUS/blob/master/gif/FaceCapture.png)](https://www.youtube.com/watch?v=UgoLVreS2Aw&list=PLHYjzSFjyyZbkPA2gw46AxITSUdRWC9Ft&index=4&t=0s)
 
+
+#### Chart
+* When comparing the real-time images and the images saved in the database, there is a value produced
+called confidence, which is the distance of the recognized face from the original model. As a result,
+a score of 0 signifies an exact match.
+* The chart will be drawn based on these confidence scores.
+
+
 #### Face Recognizer
 * Webcam will be turned on and the recognize method will be called to match and verify 
 a face of a person sitting in front of the camera and the faces stored in the database
@@ -48,11 +58,6 @@ a face of a person sitting in front of the camera and the faces stored in the da
 
   [![image](https://github.com/jtrinh21/FACEBULOUS/blob/master/gif/FaceRegconize.png)](https://www.youtube.com/watch?v=rfuolGRhg3U&feature=youtu.be)
 
-#### Chart
-* When comparing the real-time images and the images saved in the database, there is a value produced
-called confidence, which is the distance of the recognized face from the original model. As a result,
-a score of 0 signifies an exact match.
-* The chart will be drawn based on these confidence scores.
 
 #### Data
 * All the datas stored in the database will be presented here.
