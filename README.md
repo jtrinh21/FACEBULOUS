@@ -42,7 +42,7 @@ date of birth, phone number, email address...
 * Webcam will be turned on and the recognize method will be called to match and verify 
 a face of a person sitting in front of the camera and the faces stored in the database
 (what a classifier learned).
-* Once finding a matching face found, the information related to the person will be shown.
+* Once a matching face has been found, the information related to the person will be shown.
 
 #### Chart
 * When comparing the real-time images and the images saved in the database, there is a value produced
