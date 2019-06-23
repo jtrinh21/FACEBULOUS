@@ -54,4 +54,7 @@ called confidence, which is the distance of the recognized face from the origina
 a score of 0 signifies an exact match.
 * The chart will be drawn based on these confidence scores.
 
+#### Data
+* All the datas stored in the database will be presented here.
+
   [![image](https://github.com/jtrinh21/FACEBULOUS/blob/master/gif/Data.png)](https://www.youtube.com/watch?v=XmrRz5kyWm8&feature=youtu.be)
