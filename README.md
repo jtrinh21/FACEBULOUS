@@ -42,13 +42,10 @@ date of birth, phone number, email address...
  
   [![image](https://github.com/jtrinh21/FACEBULOUS/blob/master/gif/FaceCapture.png)](https://www.youtube.com/watch?v=UgoLVreS2Aw&list=PLHYjzSFjyyZbkPA2gw46AxITSUdRWC9Ft&index=4&t=0s)
 
+#### Data
+* All the datas stored in the database will be presented here.
 
-#### Chart
-* When comparing the real-time images and the images saved in the database, there is a value produced
-called confidence, which is the distance of the recognized face from the original model. As a result,
-a score of 0 signifies an exact match.
-* The chart will be drawn based on these confidence scores.
-
+  [![image](https://github.com/jtrinh21/FACEBULOUS/blob/master/gif/Data.png)](https://www.youtube.com/watch?v=XmrRz5kyWm8&feature=youtu.be)
 
 #### Face Recognizer
 * Webcam will be turned on and the recognize method will be called to match and verify 
@@ -59,7 +56,12 @@ a face of a person sitting in front of the camera and the faces stored in the da
   [![image](https://github.com/jtrinh21/FACEBULOUS/blob/master/gif/FaceRegconize.png)](https://www.youtube.com/watch?v=rfuolGRhg3U&feature=youtu.be)
 
 
-#### Data
-* All the datas stored in the database will be presented here.
+#### Chart
+* When comparing the real-time images and the images saved in the database, there is a value produced
+called confidence, which is the distance of the recognized face from the original model. As a result,
+a score of 0 signifies an exact match.
+* The chart will be drawn based on these confidence scores.
 
-  [![image](https://github.com/jtrinh21/FACEBULOUS/blob/master/gif/Data.png)](https://www.youtube.com/watch?v=XmrRz5kyWm8&feature=youtu.be)
+
+
+
