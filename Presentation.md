@@ -12,9 +12,11 @@
 #### Facial Recognition is Everywhere
 
 ![](https://d1sr9z1pdl3mb7.cloudfront.net/wp-content/uploads/2018/07/17142139/apple-face-id.jpg)
-From your smartphone, handheld devices...
 
-![](https://www.thalesgroup.com/sites/default/files/gemalto/face-tracking-renditionid-1.jpg)
-To the airports
+- From your smartphone, handheld devices...
+
+![](https://scx2.b-cdn.net/gfx/news/2018/1-facialrecogn.jpg)
+
+- To the airports
 
 
